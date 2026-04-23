@@ -83,9 +83,14 @@ Set initial condition: `.ic V(Q)=1.8 V(QB)=0`
 
 Run simulation `.tran 10p 100n` and plot waveforms.
 
+<img width="910" height="546" alt="image" src="https://github.com/user-attachments/assets/dded368c-eb2b-4cbc-a126-960a50e66a9e" />
+
+
 ### 3. Create Symbol (xschem)
 
 From the drawn schematic, create a symbol to reuse in larger designs (e.g., SRAM 4x8). Then re-run the testbench with the symbol to verify correct operation.
+
+<img width="975" height="417" alt="image" src="https://github.com/user-attachments/assets/8d3b581a-28dd-488b-94fe-e605d120a7c5" />
 
 ### 4. Layout and DRC (magic)
 
@@ -94,6 +99,9 @@ Draw the layout in magic using layers:
 - **n/p diffusion**, **poly**, **metal1**, **contacts**, **wells**
 
 Strictly follow Sky130 design rules. Run DRC to check for violations.
+
+<img width="663" height="883" alt="image" src="https://github.com/user-attachments/assets/20c4329c-a9f0-4d1c-87c9-4b77fd85bb40" />
+
 
 ### 5. Layout Simulation (ngspice)
 
@@ -110,12 +118,15 @@ ext2spice -d -o Sram_6T_bitcell_magic.spice -f ngspice
 
 Run the testbench with the extracted `.spice` file and compare results with the schematic.
 
+<img width="910" height="546" alt="image" src="https://github.com/user-attachments/assets/8a7bd220-55d6-479f-837c-99279f8f4fdc" />
+
+
 ### 6. LVS (netgen) - Layout vs Schematic
 
 Create two files:
 
 - `Sram_6T_bitcell_magic.spice` (from magic)
-- `Sram_6T_bitcell_xschem.spice` (from xschem, only the `.subckt` part)
+- `Sram_6T_bitcell_xschem.spice` (from xschem)
 
 Run LVS:
 
@@ -127,7 +138,13 @@ netgen -batch lvs \
   lvs_buffer.log
 ```
 
-The result must report `Netlists match successfully`.
+<img width="1849" height="850" alt="image" src="https://github.com/user-attachments/assets/006614a7-7a21-4360-b72f-e86484721440" />
+
+
+### The result must report `Netlists match successfully`.
+
+<img width="975" height="220" alt="image" src="https://github.com/user-attachments/assets/9aa6c2e5-470c-4c67-bc5b-135eb3caa16f" />
+
 
 ### 7. Parasitic Extraction (magic)
 
@@ -153,6 +170,9 @@ Re-run the testbench with the `postlayout_bitcell.spice` file:
 .include postlayout_bitcell.spice
 ```
 
+<img width="910" height="546" alt="image" src="https://github.com/user-attachments/assets/a1bd561e-1d1a-4562-88dd-6ce4647f5563" />
+
+
 Compare results with pre-layout to evaluate the impact of parasitics.
 
 ### 9. Export GDS (magic)
@@ -163,21 +183,6 @@ After all steps are correct, export the GDS file for fabrication or storage:
 gds write Sram_6T_bitcell.gds
 ```
 
----
+<img width="579" height="458" alt="image" src="https://github.com/user-attachments/assets/77d7ddc3-689e-4bbc-8e36-227613e21fb1" />
 
-## Summary
 
-| Step | Tool | Output |
-|------|---------|--------|
-| Schematic | xschem | `.sch` |
-| Testbench schematic | ngspice | Waveforms |
-| Symbol | xschem | `.sym` |
-| Layout | magic | `.mag` |
-| DRC | magic | Error report |
-| Extract layout spice | magic | `.spice` |
-| LVS | netgen | `lvs_buffer.log` |
-| Parasitic extraction | magic | `postlayout_bitcell.spice` |
-| Post-layout simulation | ngspice | Waveforms (with parasitics) |
-| GDS | magic | `.gds` |
-
----
