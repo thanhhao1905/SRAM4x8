@@ -142,6 +142,7 @@ netgen -batch lvs \
 ### The result must report `Netlists match successfully`.
 
 
+<img width="713" height="234" alt="image" src="https://github.com/user-attachments/assets/bd8bec5d-bed8-40b4-a606-9838cb657501" />
 
 
 
