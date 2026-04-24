@@ -1,0 +1,19 @@
+.lib /home/thanhhao/.ciel/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include Pre_charge.spice
+
+x1    BLB BL GND VDD2 Pre_charge Pre_charge
+
+VDD2 VDD2 0  0.9
+
+Vin2 Pre_charge 0 DC 0 pulse(0  1.8  0n  100p  100p  10n   20n)
+
+.ic v(BL)=0 v(BLB)=0
+
+.tran 0.1n 200n
+.save all
+.control
+run
+plot v(pre_charge) v(BL)+2 v(BLB)+4 
+.endc
+.end
+
