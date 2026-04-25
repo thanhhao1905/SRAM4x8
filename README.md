@@ -5,6 +5,7 @@
 
 The 4x8 SRAM Array is a static memory matrix with 4 rows (wordlines) and 8 columns (bitlines). This structure is built from the basic memory cells **bitcell_6t** and **bitcell_6t_full** previously designed. Each memory cell stores 1 bit of data. The 4x8 SRAM array allows sequential write and read operations on each data column.
 
+<img width="1790" height="596" alt="image" src="https://github.com/user-attachments/assets/93723299-e9d6-44f1-a6ad-5603c5c56191" />
 
 
 ## SRAM Array Structure
@@ -43,6 +44,7 @@ The entire operation is synchronized with a cycle time of `T_cycle = 20ns`. Each
 
 The user draws the schematic `array_4x8.sch` in the xschem software, using the two symbols `bitcell_6t.sym` and `bitcell_6t_full.sym` created in the previous exercise. Refer to the `array_4x8.pdf` file for connection details between blocks.
 
+<img width="1790" height="596" alt="image" src="https://github.com/user-attachments/assets/3d03efd5-8b2c-473e-8987-8c1161f462a2" />
 
 
 
@@ -57,6 +59,7 @@ Create the `code_show.sym` symbol with testbench content including:
 - Simulation configuration: `.tran 0.1n 900n`.
 
 
+<img width="814" height="747" alt="image" src="https://github.com/user-attachments/assets/928c3120-52da-4164-951c-96c888a01de1" />
 
 
 ### Schematic Simulation Waveforms
@@ -74,6 +77,7 @@ Results show that the SRAM array functions correctly:
 - After 640ns (read phase): Data is read out on Data_out.
 
 
+<img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/eaa09996-59ef-45c2-8c6a-6d5c96fc836e" />
 
 
 ### 2. Layout and DRC (magic)
@@ -84,6 +88,12 @@ Use the `getcell` command in magic to reuse the two previously designed layout f
 - `bitcell_6t_full.mag`
 
 Arrange the memory cells into a 4x8 array. Connect the WL, BL, BLB, VDD, GND, VDD2 lines and the control signals Pre_Charge, Sense, Write, Read.
+
+<img width="975" height="836" alt="image" src="https://github.com/user-attachments/assets/d57c31a2-6483-4338-bd63-d342f2d3d05b" />
+
+
+<img width="975" height="861" alt="image" src="https://github.com/user-attachments/assets/639d9ddb-cf91-43cc-848b-d20f5d9d92d7" />
+
 
 ### List of Layout Ports
 
@@ -98,6 +108,9 @@ A total of 87 ports, including:
 - Data_in: 8 signals
 - Data_out: 8 signals
 - Q nodes of each memory cell (Q1_1..Q4_8)
+
+<img width="986" height="810" alt="image" src="https://github.com/user-attachments/assets/1378a23d-8caa-4cd8-8dbe-96b16b449387" />
+
 
 ## Extracting Netlist from Layout (magic)
 
@@ -125,16 +138,19 @@ Create the file `tb_Array_4x8_non_hiera.spice` with the following content:
 
 The layout simulation results match the schematic simulation results, confirming correct layout operation.
 
+<img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/37437291-61ca-4330-b836-32c0fa599575" />
+
+
 ### 3. LVS (netgen) – Layout vs Schematic
 
-### Preparation
+#### Preparation
 
 Create the `LVS array_4x8` directory. Copy 2 files into the directory:
 
-- `array_4x8_magic.spice` (from magic)
-- `array_4x8_xschem.spice` (from xschem)
+- `Array_4x8_non_hiera_magic.spice` (from magic)
+- `Array_4x8_non_hiera_xschem.spice` (from xschem)
 
-### Run LVS
+#### Run LVS
 
 ```bash
 netgen -batch lvs \
@@ -144,11 +160,15 @@ netgen -batch lvs \
   lvs_Array_4x8_non_hiera.log
 ```
 
-### Result
+#### Result
+
+<img width="1846" height="848" alt="image" src="https://github.com/user-attachments/assets/4f74dc44-cf9e-4f97-9acc-bf616a3942e1" />
 
 ### ✅ Expected result: Circuits match uniquely.
 
-This result confirms that the layout and schematic are completely equivalent in terms of connectivity.
+<img width="803" height="230" alt="image" src="https://github.com/user-attachments/assets/6389533e-6419-40ef-b8bb-4fc591c3dc60" />
+
+### This result confirms that the layout and schematic are completely equivalent in terms of connectivity.
 
 ### 4. Parasitic Extraction (magic)
 Extract parasitics for post-layout simulation:
@@ -170,8 +190,14 @@ Run testbench with:
 .include postlayout_Array_4x8_non_hiera.spice
 Compare waveforms with pre-layout to evaluate parasitic effects.
 
+<img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/5908decb-7f3b-49ef-8f97-68e8f42f7c28" />
+
+
 ### 9. Export GDS (magic)
 After all checks pass: gds write bitcell_full.gds
+
+<img width="589" height="467" alt="image" src="https://github.com/user-attachments/assets/9fe287b2-7084-4ea3-9576-7ca0d1283ec8" />
+
 
 ## Conclusion
 
