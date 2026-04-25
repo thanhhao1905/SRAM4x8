@@ -161,10 +161,12 @@ DRC must pass with zero violations.
 
 ### 5. Layout Simulation (ngspice)
 
+```bash
 extract do local
 extract all
 ext2spice lvs
 ext2spice
+```
 
 Run testbench with `.include bitcell_6t_full_magic.spice`
 Compare with schematic simulation.
