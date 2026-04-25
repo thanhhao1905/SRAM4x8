@@ -182,7 +182,7 @@ ext2spice rthresh 0
 ext2spice -d -o postlayout_Array_4x8_non_hiera.spice -f ngspice
 ```
 
-### 8. Post-Layout Simulation (ngspice)
+### 5. Post-Layout Simulation (ngspice)
 Run testbench with:
 
 .lib sky130.lib.spice tt
@@ -193,7 +193,7 @@ Compare waveforms with pre-layout to evaluate parasitic effects.
 <img width="975" height="471" alt="image" src="https://github.com/user-attachments/assets/5908decb-7f3b-49ef-8f97-68e8f42f7c28" />
 
 
-### 9. Export GDS (magic)
+### 6. Export GDS (magic)
 After all checks pass: gds write bitcell_full.gds
 
 <img width="589" height="467" alt="image" src="https://github.com/user-attachments/assets/9fe287b2-7084-4ea3-9576-7ca0d1283ec8" />
