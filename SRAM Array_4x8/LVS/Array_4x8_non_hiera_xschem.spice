@@ -1,0 +1,133 @@
+** sch_path: /home/thanhhao/Desktop/Lab_31/Lab_31.4.1/Array_4x8_non_hiera.sch
+.subckt Array_4x8_non_hiera WL_1 WL_2 Q1_1 Q2_1 Q3_1 Q4_1 WL_3 WL_4 pre_charge1 sense1 write1
++ read1 data_out1 data_in1 Q1_2 Q2_2 Q3_2 Q4_2 pre_charge2 sense2 write2 read2 data_out2 data_in2 Q1_3 Q2_3
++ Q3_3 Q4_3 pre_charge3 sense3 write3 read3 data_out3 data_in3 Q1_4 Q2_4 Q3_4 Q4_4 pre_charge4 sense4
++ write4 read4 data_out4 data_in4 Q1_5 Q2_5 Q3_5 Q4_5 pre_charge5 sense5 write5 read5 data_out5 data_in5
++ Q1_6 Q2_6 Q3_6 Q4_6 pre_charge6 sense6 write6 read6 data_out6 data_in6 Q1_7 Q2_7 Q3_7 Q4_7 pre_charge7
++ sense7 write7 read7 data_out7 data_in7 Q1_8 Q2_8 Q3_8 Q4_8 pre_charge8 sense8 write8 read8 data_out8
++ data_in8 VDD2
+
+x2 WL_3 Q3_1 net2 net17 net1 Sram_6T_bitcell
+x3 WL_2 Q2_1 net2 net18 net1 Sram_6T_bitcell
+x4 WL_1 Q1_1 net2 net19 net1 Sram_6T_bitcell
+x10 WL_3 Q3_3 net5 net20 net6 Sram_6T_bitcell
+x11 WL_2 Q2_3 net5 net21 net6 Sram_6T_bitcell
+x12 WL_1 Q1_3 net5 net22 net6 Sram_6T_bitcell
+x14 WL_3 Q3_2 net3 net23 net4 Sram_6T_bitcell
+x15 WL_2 Q2_2 net3 net24 net4 Sram_6T_bitcell
+x16 WL_1 Q1_2 net3 net25 net4 Sram_6T_bitcell
+x18 WL_3 Q3_4 net7 net26 net8 Sram_6T_bitcell
+x19 WL_2 Q2_4 net7 net27 net8 Sram_6T_bitcell
+x20 WL_1 Q1_4 net7 net28 net8 Sram_6T_bitcell
+x22 WL_3 Q3_5 net9 net29 net10 Sram_6T_bitcell
+x23 WL_2 Q2_5 net9 net30 net10 Sram_6T_bitcell
+x24 WL_1 Q1_5 net9 net31 net10 Sram_6T_bitcell
+x26 WL_3 Q3_6 net11 net32 net12 Sram_6T_bitcell
+x27 WL_2 Q2_6 net11 net33 net12 Sram_6T_bitcell
+x28 WL_1 Q1_6 net11 net34 net12 Sram_6T_bitcell
+x30 WL_3 Q3_7 net13 net35 net14 Sram_6T_bitcell
+x31 WL_2 Q2_7 net13 net36 net14 Sram_6T_bitcell
+x32 WL_1 Q1_7 net13 net37 net14 Sram_6T_bitcell
+x34 WL_3 Q3_8 net15 net38 net16 Sram_6T_bitcell
+x35 WL_2 Q2_8 net15 net39 net16 Sram_6T_bitcell
+x36 WL_1 Q1_8 net15 net40 net16 Sram_6T_bitcell
+x1 WL_4 net2 Q4_1 net41 net1 VDD2 pre_charge1 sense1 read1 write1 data_out1 data_in1 bitcell_6t_full
+x5 WL_4 net3 Q4_2 net42 net4 VDD2 pre_charge2 sense2 read2 write2 data_out2 data_in2 bitcell_6t_full
+x6 WL_4 net5 Q4_3 net43 net6 VDD2 pre_charge3 sense3 read3 write3 data_out3 data_in3 bitcell_6t_full
+x7 WL_4 net7 Q4_4 net44 net8 VDD2 pre_charge4 sense4 read4 write4 data_out4 data_in4 bitcell_6t_full
+x8 WL_4 net9 Q4_5 net45 net10 VDD2 pre_charge5 sense5 read5 write5 data_out5 data_in5
++ bitcell_6t_full
+x9 WL_4 net11 Q4_6 net46 net12 VDD2 pre_charge6 sense6 read6 write6 data_out6 data_in6
++ bitcell_6t_full
+x13 WL_4 net13 Q4_7 net47 net14 VDD2 pre_charge7 sense7 read7 write7 data_out7 data_in7
++ bitcell_6t_full
+x17 WL_4 net15 Q4_8 net48 net16 VDD2 pre_charge8 sense8 read8 write8 data_out8 data_in8
++ bitcell_6t_full
+
+
+
+.subckt Sram_6T_bitcell WL Q BLB QB BL
+
+XM1 Q QB GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 
+XM2 QB Q VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 
+XM3 Q QB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 
+XM4 QB Q GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 
+XM5 BL WL Q GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 
+XM6 BLB WL QB GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 
+.ends
+
+
+
+.subckt bitcell_6t_full WL BLB Q QB BL VDD2 pre_charge sense read write data_out data_in
+
+XM1 Q QB GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 QB Q VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Q QB VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 QB Q GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 BL WL Q GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 BLB WL QB GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 BLB pre_charge BL GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM8 BL pre_charge VDD2 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM9 BLB pre_charge VDD2 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM10 BLB BL net2 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 BLB BL net1 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM12 BL BLB net2 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM13 BL BLB net1 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM14 net3 sense VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM15 net3 sense GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM16 net2 net3 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM17 net1 sense GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM18 BL write data_in GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM19 BL read data_out GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM20 data_out net4 BL VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM21 net4 read VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM22 net4 read GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+.end

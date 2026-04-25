@@ -1,0 +1,111 @@
+* NGSPICE file created from Array_4x8_non_hiera.ext - technology: sky130A
+
+.subckt Sram_6T_bitcell VDD GND WL Q BLB QB BL
+X0 QB Q GND GND sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.1 as=0.1625 ps=1.15 w=0.5 l=0.15
+X1 VDD QB Q VDD sky130_fd_pr__pfet_01v8 ad=0.325 pd=1.65 as=0.55 ps=3.1 w=1 l=0.15
+X2 Q WL BL GND sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.1 as=0.35 ps=2.4 w=0.5 l=0.15
+X3 BLB WL QB GND sky130_fd_pr__nfet_01v8 ad=0.275 pd=2.1 as=0.15 ps=1.1 w=0.5 l=0.15
+X4 GND QB Q GND sky130_fd_pr__nfet_01v8 ad=0.1625 pd=1.15 as=0.15 ps=1.1 w=0.5 l=0.15
+X5 QB Q VDD VDD sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.2 as=0.325 ps=1.65 w=1 l=0.15
+.ends
+
+.subckt bitcell_full WL Q BLB QB BL pre_charge sense write data_in read data_out VDD
++ VDD2 GND
+X0 QB Q GND GND sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.1 as=0.1625 ps=1.15 w=0.5 l=0.15
+X1 data_out a_175_295# BL VDD sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.2 as=0.6 ps=3.2 w=1 l=0.15
+X2 BLB BL a_185_945# VDD sky130_fd_pr__pfet_01v8 ad=1.1 pd=5.1 as=0.6 ps=2.6 w=2 l=0.15
+X3 BLB BL a_185_705# GND sky130_fd_pr__nfet_01v8 ad=0.6 pd=3.2 as=0.3 ps=1.6 w=1 l=0.15
+X4 BL write data_in GND sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.1 as=0.275 ps=2.1 w=0.5 l=0.15
+X5 VDD2 pre_charge BL GND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.2 as=0.275 ps=2.1 w=0.5 l=0.15
+X6 a_185_945# a_40_705# VDD VDD sky130_fd_pr__pfet_01v8 ad=1.2 pd=5.2 as=0.6 ps=2.6 w=2 l=0.15
+X7 data_out read BL GND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.2 as=0.15 ps=1.1 w=0.5 l=0.15
+X8 VDD sense a_40_705# VDD sky130_fd_pr__pfet_01v8 ad=0.6 pd=2.6 as=1.1 ps=5.1 w=2 l=0.15
+X9 a_185_705# sense GND GND sky130_fd_pr__nfet_01v8 ad=0.6 pd=3.2 as=0.6 ps=3.2 w=1 l=0.15
+X10 GND sense a_40_705# GND sky130_fd_pr__nfet_01v8 ad=0.6 pd=3.2 as=0.55 ps=3.1 w=1 l=0.15
+X11 BLB WL QB GND sky130_fd_pr__nfet_01v8 ad=0.275 pd=2.1 as=0.15 ps=1.1 w=0.5 l=0.15
+X12 VDD QB Q VDD sky130_fd_pr__pfet_01v8 ad=0.325 pd=1.65 as=0.55 ps=3.1 w=1 l=0.15
+X13 BLB pre_charge BL GND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.2 as=0.3 ps=2.2 w=0.5 l=0.15
+X14 a_175_295# read VDD VDD sky130_fd_pr__pfet_01v8 ad=0.55 pd=3.1 as=0.6 ps=3.2 w=1 l=0.15
+X15 GND QB Q GND sky130_fd_pr__nfet_01v8 ad=0.1625 pd=1.15 as=0.15 ps=1.1 w=0.5 l=0.15
+X16 a_185_945# BLB BL VDD sky130_fd_pr__pfet_01v8 ad=0.6 pd=2.6 as=1.2 ps=5.2 w=2 l=0.15
+X17 a_175_295# read GND GND sky130_fd_pr__nfet_01v8 ad=0.275 pd=2.1 as=0.3 ps=2.2 w=0.5 l=0.15
+X18 Q WL BL GND sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.1 as=0.35 ps=2.4 w=0.5 l=0.15
+X19 a_185_705# BLB BL GND sky130_fd_pr__nfet_01v8 ad=0.3 pd=1.6 as=0.6 ps=3.2 w=1 l=0.15
+X20 QB Q VDD VDD sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.2 as=0.325 ps=1.65 w=1 l=0.15
+X21 BLB pre_charge VDD2 GND sky130_fd_pr__nfet_01v8 ad=0.35 pd=2.4 as=0.3 ps=2.2 w=0.5 l=0.15
+.ends
+
+.subckt Array_4x8_non_hiera WL_1 WL_2 Q1_1 Q2_1 Q3_1 Q4_1 WL_3 WL_4 pre_charge1 sense1
++ write1 read1 data_out1 data_in1 Q1_2 Q2_2 Q3_2 Q4_2 pre_charge2 sense2 write2 read2
++ data_out2 data_in2 Q1_3 Q2_3 Q3_3 Q4_3 pre_charge3 sense3 write3 read3 data_out3
++ data_in3 Q1_4 Q2_4 Q3_4 Q4_4 pre_charge4 sense4 write4 read4 data_out4 data_in4
++ Q1_5 Q2_5 Q3_5 Q4_5 pre_charge5 sense5 write5 read5 data_out5 data_in5 Q1_6 Q2_6
++ Q3_6 Q4_6 pre_charge6 sense6 write6 read6 data_out6 data_in6 Q1_7 Q2_7 Q3_7 Q4_7
++ pre_charge7 sense7 write7 read7 data_out7 data_in7 Q1_8 Q2_8 Q3_8 Q4_8 pre_charge8
++ sense8 write8 read8 data_out8 data_in8 VDD GND VDD2
+XSram_6T_bitcell_20 VDD GND WL_1 Q1_7 bitcell_full_6/BLB Sram_6T_bitcell_20/QB bitcell_full_6/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_21 VDD GND WL_3 Q3_8 bitcell_full_7/BLB Sram_6T_bitcell_21/QB bitcell_full_7/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_10 VDD GND WL_2 Q2_4 bitcell_full_3/BLB Sram_6T_bitcell_10/QB bitcell_full_3/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_22 VDD GND WL_2 Q2_8 bitcell_full_7/BLB Sram_6T_bitcell_22/QB bitcell_full_7/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_11 VDD GND WL_1 Q1_4 bitcell_full_3/BLB Sram_6T_bitcell_11/QB bitcell_full_3/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_23 VDD GND WL_1 Q1_8 bitcell_full_7/BLB Sram_6T_bitcell_23/QB bitcell_full_7/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_12 VDD GND WL_3 Q3_5 bitcell_full_4/BLB Sram_6T_bitcell_12/QB bitcell_full_4/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_13 VDD GND WL_2 Q2_5 bitcell_full_4/BLB Sram_6T_bitcell_13/QB bitcell_full_4/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_14 VDD GND WL_1 Q1_5 bitcell_full_4/BLB Sram_6T_bitcell_14/QB bitcell_full_4/BL
++ Sram_6T_bitcell
+Xbitcell_full_0 WL_4 Q4_1 bitcell_full_0/BLB bitcell_full_0/QB bitcell_full_0/BL pre_charge1
++ sense1 write1 data_in1 read1 data_out1 VDD VDD2 GND bitcell_full
+XSram_6T_bitcell_15 VDD GND WL_3 Q3_6 bitcell_full_5/BLB Sram_6T_bitcell_15/QB bitcell_full_5/BL
++ Sram_6T_bitcell
+Xbitcell_full_1 WL_4 Q4_2 bitcell_full_1/BLB bitcell_full_1/QB bitcell_full_1/BL pre_charge2
++ sense2 write2 data_in2 read2 data_out2 VDD VDD2 GND bitcell_full
+XSram_6T_bitcell_16 VDD GND WL_2 Q2_6 bitcell_full_5/BLB Sram_6T_bitcell_16/QB bitcell_full_5/BL
++ Sram_6T_bitcell
+Xbitcell_full_2 WL_4 Q4_3 bitcell_full_2/BLB bitcell_full_2/QB bitcell_full_2/BL pre_charge3
++ sense3 write3 data_in3 read3 data_out3 VDD VDD2 GND bitcell_full
+XSram_6T_bitcell_18 VDD GND WL_3 Q3_7 bitcell_full_6/BLB Sram_6T_bitcell_18/QB bitcell_full_6/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_17 VDD GND WL_1 Q1_6 bitcell_full_5/BLB Sram_6T_bitcell_17/QB bitcell_full_5/BL
++ Sram_6T_bitcell
+Xbitcell_full_3 WL_4 Q4_4 bitcell_full_3/BLB bitcell_full_3/QB bitcell_full_3/BL pre_charge4
++ sense4 write4 data_in4 read4 data_out4 VDD VDD2 GND bitcell_full
+XSram_6T_bitcell_19 VDD GND WL_2 Q2_7 bitcell_full_6/BLB Sram_6T_bitcell_19/QB bitcell_full_6/BL
++ Sram_6T_bitcell
+Xbitcell_full_4 WL_4 Q4_5 bitcell_full_4/BLB bitcell_full_4/QB bitcell_full_4/BL pre_charge5
++ sense5 write5 data_in5 read5 data_out5 VDD VDD2 GND bitcell_full
+Xbitcell_full_5 WL_4 Q4_6 bitcell_full_5/BLB bitcell_full_5/QB bitcell_full_5/BL pre_charge6
++ sense6 write6 data_in6 read6 data_out6 VDD VDD2 GND bitcell_full
+Xbitcell_full_7 WL_4 Q4_8 bitcell_full_7/BLB bitcell_full_7/QB bitcell_full_7/BL pre_charge8
++ sense8 write8 data_in8 read8 data_out8 VDD VDD2 GND bitcell_full
+Xbitcell_full_6 WL_4 Q4_7 bitcell_full_6/BLB bitcell_full_6/QB bitcell_full_6/BL pre_charge7
++ sense7 write7 data_in7 read7 data_out7 VDD VDD2 GND bitcell_full
+XSram_6T_bitcell_0 VDD GND WL_1 Q1_1 bitcell_full_0/BLB Sram_6T_bitcell_0/QB bitcell_full_0/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_1 VDD GND WL_2 Q2_1 bitcell_full_0/BLB Sram_6T_bitcell_1/QB bitcell_full_0/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_2 VDD GND WL_3 Q3_1 bitcell_full_0/BLB Sram_6T_bitcell_2/QB bitcell_full_0/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_3 VDD GND WL_3 Q3_2 bitcell_full_1/BLB Sram_6T_bitcell_3/QB bitcell_full_1/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_4 VDD GND WL_2 Q2_2 bitcell_full_1/BLB Sram_6T_bitcell_4/QB bitcell_full_1/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_5 VDD GND WL_1 Q1_2 bitcell_full_1/BLB Sram_6T_bitcell_5/QB bitcell_full_1/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_6 VDD GND WL_3 Q3_3 bitcell_full_2/BLB Sram_6T_bitcell_6/QB bitcell_full_2/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_8 VDD GND WL_1 Q1_3 bitcell_full_2/BLB Sram_6T_bitcell_8/QB bitcell_full_2/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_7 VDD GND WL_2 Q2_3 bitcell_full_2/BLB Sram_6T_bitcell_7/QB bitcell_full_2/BL
++ Sram_6T_bitcell
+XSram_6T_bitcell_9 VDD GND WL_3 Q3_4 bitcell_full_3/BLB Sram_6T_bitcell_9/QB bitcell_full_3/BL
++ Sram_6T_bitcell
+.ends
+

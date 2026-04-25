@@ -1,0 +1,168 @@
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8         |Circuit 2: sky130_fd_pr__pfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Subcircuit summary:
+Circuit 1: Sram_6T_bitcell                 |Circuit 2: Sram_6T_bitcell                 
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (4)                |sky130_fd_pr__nfet_01v8 (4)                
+sky130_fd_pr__pfet_01v8 (2)                |sky130_fd_pr__pfet_01v8 (2)                
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: Sram_6T_bitcell                 |Circuit 2: Sram_6T_bitcell                 
+-------------------------------------------|-------------------------------------------
+BLB                                        |BLB                                        
+BL                                         |BL                                         
+WL                                         |WL                                         
+VDD                                        |VDD                                        
+GND                                        |GND                                        
+Q                                          |Q                                          
+QB                                         |QB                                         
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes Sram_6T_bitcell and Sram_6T_bitcell are equivalent.
+Flattening unmatched subcell bitcell_full in circuit Array_4x8_non_hiera (0)(8 instances)
+Flattening unmatched subcell bitcell_6t_full in circuit Array_4x8_non_hiera (1)(8 instances)
+
+Subcircuit summary:
+Circuit 1: Array_4x8_non_hiera             |Circuit 2: Array_4x8_non_hiera             
+-------------------------------------------|-------------------------------------------
+Sram_6T_bitcell (24)                       |Sram_6T_bitcell (24)                       
+sky130_fd_pr__nfet_01v8 (112)              |sky130_fd_pr__nfet_01v8 (112)              
+sky130_fd_pr__pfet_01v8 (64)               |sky130_fd_pr__pfet_01v8 (64)               
+Number of devices: 200                     |Number of devices: 200                     
+Number of nets: 167                        |Number of nets: 167                        
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: Array_4x8_non_hiera             |Circuit 2: Array_4x8_non_hiera             
+-------------------------------------------|-------------------------------------------
+data_out1                                  |data_out1                                  
+data_out2                                  |data_out2                                  
+data_out3                                  |data_out3                                  
+data_out4                                  |data_out4                                  
+data_out5                                  |data_out5                                  
+data_out6                                  |data_out6                                  
+data_out7                                  |data_out7                                  
+data_out8                                  |data_out8                                  
+pre_charge1                                |pre_charge1                                
+pre_charge2                                |pre_charge2                                
+pre_charge3                                |pre_charge3                                
+pre_charge4                                |pre_charge4                                
+pre_charge5                                |pre_charge5                                
+pre_charge6                                |pre_charge6                                
+pre_charge7                                |pre_charge7                                
+pre_charge8                                |pre_charge8                                
+sense1                                     |sense1                                     
+sense2                                     |sense2                                     
+sense3                                     |sense3                                     
+sense4                                     |sense4                                     
+sense5                                     |sense5                                     
+sense6                                     |sense6                                     
+sense7                                     |sense7                                     
+sense8                                     |sense8                                     
+read1                                      |read1                                      
+read2                                      |read2                                      
+read3                                      |read3                                      
+read4                                      |read4                                      
+read5                                      |read5                                      
+read6                                      |read6                                      
+read7                                      |read7                                      
+read8                                      |read8                                      
+Q4_1                                       |Q4_1                                       
+Q4_2                                       |Q4_2                                       
+Q4_3                                       |Q4_3                                       
+Q4_4                                       |Q4_4                                       
+Q4_5                                       |Q4_5                                       
+Q4_6                                       |Q4_6                                       
+Q4_7                                       |Q4_7                                       
+Q4_8                                       |Q4_8                                       
+WL_4                                       |WL_4                                       
+VDD2                                       |VDD2                                       
+Q3_1                                       |Q3_1                                       
+Q2_1                                       |Q2_1                                       
+Q1_1                                       |Q1_1                                       
+Q3_3                                       |Q3_3                                       
+Q2_3                                       |Q2_3                                       
+Q1_3                                       |Q1_3                                       
+Q3_2                                       |Q3_2                                       
+Q2_2                                       |Q2_2                                       
+Q1_2                                       |Q1_2                                       
+Q3_4                                       |Q3_4                                       
+Q2_4                                       |Q2_4                                       
+Q1_4                                       |Q1_4                                       
+Q3_5                                       |Q3_5                                       
+Q2_5                                       |Q2_5                                       
+Q1_5                                       |Q1_5                                       
+Q3_6                                       |Q3_6                                       
+Q2_6                                       |Q2_6                                       
+Q1_6                                       |Q1_6                                       
+Q3_7                                       |Q3_7                                       
+Q2_7                                       |Q2_7                                       
+Q1_7                                       |Q1_7                                       
+Q3_8                                       |Q3_8                                       
+Q2_8                                       |Q2_8                                       
+Q1_8                                       |Q1_8                                       
+write1                                     |write1                                     
+write2                                     |write2                                     
+write3                                     |write3                                     
+write4                                     |write4                                     
+write5                                     |write5                                     
+write6                                     |write6                                     
+write7                                     |write7                                     
+write8                                     |write8                                     
+data_in1                                   |data_in1                                   
+data_in2                                   |data_in2                                   
+data_in3                                   |data_in3                                   
+data_in4                                   |data_in4                                   
+data_in5                                   |data_in5                                   
+data_in6                                   |data_in6                                   
+data_in7                                   |data_in7                                   
+data_in8                                   |data_in8                                   
+WL_3                                       |WL_3                                       
+WL_2                                       |WL_2                                       
+WL_1                                       |WL_1                                       
+GND                                        |GND                                        
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes Array_4x8_non_hiera and Array_4x8_non_hiera are equivalent.
+
+Final result: Circuits match uniquely.
+.
