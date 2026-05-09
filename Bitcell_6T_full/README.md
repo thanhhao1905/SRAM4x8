@@ -30,7 +30,7 @@ All blocks share the same BL, BLB, WL, and control signals.
 
 ---
 ## Connection Diagram
-Inputs:
+**Inputs:**
 
 WL (Word Line)
 
@@ -44,7 +44,7 @@ read (enable read output)
 
 Pre_charge (enable precharge)
 
-Outputs:
+**Outputs:**
 
 Data_out (read data)
 
@@ -52,7 +52,7 @@ BL, BLB (bitlines, internal)
 
 Q, QB (internal storage nodes)
 
-Power:
+**Power:**
 
 VDD (1.8V for periphery)
 
